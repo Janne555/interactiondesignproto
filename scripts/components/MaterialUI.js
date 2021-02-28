@@ -2,5 +2,7 @@ export const {
   Button,
   List,
   ListItem,
-  ListItemText
+  ListItemText,
+  CircularProgress,
+  Typography
 } = MaterialUI

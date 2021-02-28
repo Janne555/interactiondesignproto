@@ -1,0 +1,34 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Roboto", sans-serif;
+}
+
+.camera-view {
+  width: 500px;
+  height: 375px;
+  background-color: rgb(175, 173, 173);
+}
+
+video {
+  height: 100%;
+  width: 100%;
+}
+
+.face-id-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.face-id-page > * {
+  margin: 1em;
+}
+
+.no-cam-message {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
