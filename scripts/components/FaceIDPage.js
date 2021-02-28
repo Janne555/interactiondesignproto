@@ -24,7 +24,7 @@ function FaceIDPage({ name, onCancel, onSuccess, onFailure }) {
         <${CameraView} />
         <h2>Just making sure it's you</h2>
         <${CircularProgress} />
-        <${Button} onClick={${onCancel}} variant="outlined">Cancel<//>
+        <${Button} onClick=${onCancel} variant="outlined">Cancel<//>
       </div>
     </div>
   `
