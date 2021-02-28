@@ -48,10 +48,10 @@ function App() {
               <p>This option goes through the attendance registration flow without any errors taking place</p>
             </li>
             <li>
-              <${Link} className="not-ready" to="/variant-2">Fails on card scanning<//>
+              <${Link} to="/variant-2">Fails on card scanning<//>
             </li>
             <li>
-              <${Link} className="not-ready" to="/variant-3">Fails on facial recognition<//>
+              <${Link} to="/variant-3">Fails on facial recognition<//>
             </li>
             <li>
               <${Link} className="not-ready" to="/variant-4">Fails randomly<//>
