@@ -54,7 +54,7 @@ function App() {
               <${Link} to="/variant-3">Fails on facial recognition<//>
             </li>
             <li>
-              <${Link} className="not-ready" to="/variant-4">Fails randomly<//>
+              <${Link} to="/variant-4">Fails for unknown reason<//>
             </li>
           </ul>
         <//>

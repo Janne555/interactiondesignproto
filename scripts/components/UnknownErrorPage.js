@@ -1,25 +1,24 @@
 import { html } from '../services/index.js'
-import { EyeOffIcon, FrownIcon } from './Icons.js'
+import { MehIcon } from './Icons.js'
 import { Button } from './MaterialUI.js'
 
 /**
  * 
  * @param {{message: string, onBackToStart: () => void }} param0 
  */
-function FaceScanningErrorPage({ message, onBackToStart }) {
+function UnknownErrorPage({ message, onBackToStart }) {
 
   return html`
-    <div className="page face-id-error">
+    <div className="page unknown-error">
       <header>
         <h1>Oops!</h1>
       </header>
       <div className="content">
-        <h2>${message[0]}</h2>
-        <h3>${message[1]}</h3>
+        <h2>${message}</h2>
         <div className="icon">
-          <${EyeOffIcon} />
+          <${MehIcon} />
         </div>
-        <p>Please contact the administrator</p>
+        <p>Please try again</p>
         <${Button} variant="outlined" onClick=${onBackToStart}>Back to start<//>
       </div>
     </div>
@@ -27,4 +26,4 @@ function FaceScanningErrorPage({ message, onBackToStart }) {
 }
 
 
-export default FaceScanningErrorPage
+export default UnknownErrorPage

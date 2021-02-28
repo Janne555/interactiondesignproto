@@ -3,7 +3,7 @@ import { html } from '../services/index.js'
 const Context = React.createContext()
 
 function VariantProvider({ children }) {
-  const [config, setConfig] = React.useState()
+  const [config = {}, setConfig] = React.useState()
 
   return html`
     <${Context.Provider} value=${{ config, setConfig }}>
@@ -13,7 +13,7 @@ function VariantProvider({ children }) {
 }
 
 /**
- * @typedef {{cardReadingErrorMessage: string, faceScanningError: string}} Config
+ * @typedef {{cardReadingErrorMessage: string, faceScanningError: string[], unknownError: string}} Config
  */
 
 /**

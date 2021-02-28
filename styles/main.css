@@ -134,6 +134,16 @@ li p {
   margin: 1rem;
 }
 
+.unknown-error .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.unknown-error .content > * {
+  margin: 1rem;
+}
+
 
 .icon > svg {
   height: 100px;
