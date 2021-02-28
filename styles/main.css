@@ -90,3 +90,13 @@ header {
   height: 100px;
   width: 100px;
 }
+
+.not-ready {
+  pointer-events: none;
+  text-decoration: none;
+  color: black;
+}
+.not-ready::after {
+  margin-left: 1rem;
+  content: '(not implemented yet)'
+}

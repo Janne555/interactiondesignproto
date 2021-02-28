@@ -30,13 +30,13 @@ function App() {
               <${Link} to="/variant-1">Happy path<//>
             <//>
             <${ListItem}>
-              <${Link} to="/variant-2">Fails on card scanning<//>
+              <${Link} className="not-ready" to="/variant-2">Fails on card scanning<//>
             <//>
             <${ListItem}>
-              <${Link} to="/variant-3">Fails on facial recognition<//>
+              <${Link} className="not-ready" to="/variant-3">Fails on facial recognition<//>
             <//>
             <${ListItem}>
-              <${Link} to="/variant-4">Fails randomly<//>
+              <${Link} className="not-ready" to="/variant-4">Fails randomly<//>
             <//>
           <//>
         <//>
