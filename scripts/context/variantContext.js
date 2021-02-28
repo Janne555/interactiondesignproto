@@ -13,7 +13,7 @@ function VariantProvider({ children }) {
 }
 
 /**
- * @typedef {{cardReadingErrorMessage: string, faceScanningError: string[], unknownError: string}} Config
+ * @typedef {{cardReadingErrorMessage: string, faceScanningError: string[], unknownError: string, followUpMessage: string}} Config
  */
 
 /**

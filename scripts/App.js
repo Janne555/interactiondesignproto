@@ -6,6 +6,7 @@ import Variant4 from './components/Variant4.js'
 import Variant3 from './components/Variant3.js'
 import Variant2 from './components/Variant2.js'
 import { useVideo } from './context/videoContext.js'
+import Variant5 from './components/Variant5.js'
 
 function App() {
   const { requestWebCam, message, stream } = useVideo()
@@ -24,6 +25,9 @@ function App() {
         <//>
         <${Route} path="/variant-4">
           <${Variant4} />
+        <//>
+        <${Route} path="/variant-5">
+          <${Variant5} />
         <//>
         <${Route} path="/">
           <h1>Attendance Management System Interactive Prototype</h1>
@@ -55,6 +59,9 @@ function App() {
             </li>
             <li>
               <${Link} to="/variant-4">Fails for unknown reason<//>
+            </li>
+            <li>
+              <${Link} to="/variant-5">Not registered for training<//>
             </li>
           </ul>
         <//>

@@ -6,7 +6,7 @@ import { Button } from './MaterialUI.js'
  * 
  * @param {{message: string, onBackToStart: () => void }} param0 
  */
-function CardReaderErrorPage({ message, onBackToStart }) {
+function CardReaderErrorPage({ message, followUpMessage, onBackToStart }) {
 
   return html`
     <div className="page card-reader-error">
@@ -18,7 +18,7 @@ function CardReaderErrorPage({ message, onBackToStart }) {
         <div className="icon">
           <${FrownIcon} />
         </div>
-        <p>Please try again</p>
+        <p>${followUpMessage}</p>
         <${Button} variant="outlined" onClick=${onBackToStart}>Back to start<//>
       </div>
     </div>

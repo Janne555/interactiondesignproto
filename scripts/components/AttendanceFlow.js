@@ -50,7 +50,7 @@ function AttendanceFlow() {
   return html`
     ${{
       "card-reader": html`<${CardReaderPage} onSuccess=${handleSuccesfulCardReading} onFailure=${handleFailedCardReading} />`,
-      "card-reader-error": html`<${CardReaderErrorPage} message=${error} onBackToStart=${handleBackToStart} />`,
+      "card-reader-error": html`<${CardReaderErrorPage} message=${error} onBackToStart=${handleBackToStart} followUpMessage=${config.followUpMessage} />`,
       "face-id": html`<${FaceIDPage} onCancel=${handleCancel} onSuccess=${handleFaceIdSuccess} name=${name} onFailure=${handleFaceScanningFailure} />`,
       "face-id-error": html`<${FaceScanningErrorPage} message=${error} onBackToStart=${handleBackToStart} />`,
       "unknown-error": html`<${UnknownErrorPage} onBackToStart=${handleBackToStart} message=${error} />`,
