@@ -4,16 +4,16 @@ import { Button, CircularProgress } from './MaterialUI.js'
 
 /**
  * 
- * @param {{name: string}} param0 
+ * @param {{name: string, onCancel: () => void}} param0 
  */
-function FaceIDPage({ name }) {
+function FaceIDPage({ name, onCancel }) {
   return html`
     <div className="face-id-page">
       <h1>Hello ${name}!</h1>
       <${CameraView} />
       <h2>Just making sure it's you</h2>
       <${CircularProgress} />
-      <${Button} variant="outlined">Cancel<//>
+      <${Button} onClick={${onCancel}} variant="outlined">Cancel<//>
     </div>
   `
 }
