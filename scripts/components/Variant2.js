@@ -1,11 +1,17 @@
+import { useVariantContext } from '../context/variantContext.js'
 import { html } from '../services/index.js'
+import AttendanceFlow from './AttendanceFlow.js'
 
 function Variant2() {
-  return html`
-    <div>
-      variant 2
-    </div>
-  `
+  const { setConfig } = useVariantContext()
+
+  React.useEffect(() => {
+    setConfig({
+      cardReadingErrorMessage: "We couldn't scan your id card"
+    })
+  }, [])
+
+  return html`<${AttendanceFlow} />`
 }
 
 export default Variant2

@@ -87,11 +87,6 @@ header {
   margin: 1rem;
 }
 
-.attendance-registered .icon > svg {
-  height: 100px;
-  width: 100px;
-}
-
 .not-ready {
   pointer-events: none;
   text-decoration: none;
@@ -117,4 +112,15 @@ li p {
 
 .padding {
   padding: 1rem;
+}
+
+.card-reader-error .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon > svg {
+  height: 100px;
+  width: 100px;
 }
