@@ -2,6 +2,12 @@ body {
   height: 100vh;
   width: 100vw;
   font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+main {
+  height: 100%;
+  width: 100%;
 }
 
 .camera-view {
@@ -15,14 +21,50 @@ video {
   width: 100%;
 }
 
-.face-id-page {
+.page {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "header header header"
+    "content content content";
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  grid-area: header;
+  justify-self: center;
+  align-self: center;
+}
+
+.card-reader .icon {
+  grid-area: content;
+  justify-self: center;
+}
+
+.card-reader .icon > svg {
+  height: 140px;
+  width: 140px;
+}
+
+.card-reader .progress-spinner {
+  grid-area: content;
+  justify-self: center;
+}
+
+.content {
+  grid-area: content;
+}
+
+.face-id .content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.face-id-page > * {
-  margin: 1em;
+.face-id .content > * {
+  margin: 1rem;
 }
 
 .no-cam-message {
