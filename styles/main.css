@@ -49,6 +49,7 @@ header {
 }
 
 .card-reader .progress-spinner {
+  margin-top: 5rem;
   grid-area: content;
   justify-self: center;
 }
@@ -73,4 +74,19 @@ header {
   width: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.attendance-registered .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.attendance-registered .content > * {
+  margin: 1rem;
+}
+
+.attendance-registered .icon > svg {
+  height: 100px;
+  width: 100px;
 }
