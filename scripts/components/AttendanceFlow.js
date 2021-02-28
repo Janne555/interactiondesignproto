@@ -5,10 +5,10 @@ import CardReaderPage from './CardReaderPage.js'
 import FaceIDPage from './FaceIDPage.js'
 import FaceScanningErrorPage from './FaceScanningErrorPage.js'
 
-function AttendanceFlow({ config = {} }) {
-  const [page, setPage] = React.useState("face-id-error")
+function AttendanceFlow() {
+  const [page, setPage] = React.useState("card-reader")
   const [name, setName] = React.useState()
-  const [error, setError] = React.useState("fail")
+  const [error, setError] = React.useState("")
 
   function handleCancel() {
     setPage("card-reader")
