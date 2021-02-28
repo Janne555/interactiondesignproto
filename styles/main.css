@@ -8,6 +8,7 @@ body {
 main {
   height: 100%;
   width: 100%;
+  padding: 1rem;
 }
 
 .camera-view {
@@ -99,4 +100,21 @@ header {
 .not-ready::after {
   margin-left: 1rem;
   content: '(not implemented yet)'
+}
+
+p {
+  max-width: 40ch;
+}
+
+li p {
+  margin-top: .5rem;
+  margin-left: .5rem;
+}
+
+.margin {
+  margin: 1rem;
+}
+
+.padding {
+  padding: 1rem;
 }

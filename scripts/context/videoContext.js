@@ -6,9 +6,28 @@ function VideoProvider({ children }) {
   const [error, setError] = React.useState()
 
   React.useEffect(() => {
+    if (window.localStorage.getItem("web-cam-was-available") != null) {
+      if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(stream => {
+            window.localStorage.setItem("web-cam-was-available", "true")
+            setStream(stream)
+          })
+          .catch(error => {
+            setError(error)
+            console.error(error)
+          })
+      }
+    }
+  }, [])
+
+  function requestWebCam() {
+    setError(undefined)
+    window.localStorage.removeItem("web-cam-was-available")
     if (navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({ video: true })
         .then(stream => {
+          window.localStorage.setItem("web-cam-was-available", "true")
           setStream(stream)
         })
         .catch(error => {
@@ -16,17 +35,27 @@ function VideoProvider({ children }) {
           console.error(error)
         })
     }
-  }, [])
+  }
+
+  function getMessage() {
+    if (error) {
+      return error.message
+    }
+
+    if (stream) {
+      return "Web Cam Available"
+    }
+  }
 
   return html`
-    <${Context.Provider} value=${{ stream, isFallback: Boolean(error) }}>
+    <${Context.Provider} value=${{ stream, isFallback: Boolean(error), requestWebCam, message: getMessage() }}>
       ${children}
     <//>
   `
 }
 
 /**
- * @typedef {{stream: MediaStream, isFallback: boolean }} VideoContext
+ * @typedef {{stream: MediaStream, isFallback: boolean, requestWebCam: () => void, message: string | undefined }} VideoContext
  */
 
 /**
