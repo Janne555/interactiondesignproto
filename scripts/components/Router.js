@@ -1,5 +1,8 @@
-import { html } from '../services/index.js'
+const Link = ReactRouterDOM.Link
+const Route = ReactRouterDOM.Route
+const Switch = ReactRouterDOM.Switch
+const HashRouter = ReactRouterDOM.HashRouter
 
-function Route({ children, route }) {
-  return children
+export {
+  Link, Route, Switch, HashRouter
 }
