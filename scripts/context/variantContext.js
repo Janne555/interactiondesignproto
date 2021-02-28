@@ -13,7 +13,7 @@ function VariantProvider({ children }) {
 }
 
 /**
- * @typedef {{cardReadingErrorMessage: string}} Config
+ * @typedef {{cardReadingErrorMessage: string, faceScanningError: string}} Config
  */
 
 /**

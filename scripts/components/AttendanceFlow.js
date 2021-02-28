@@ -3,9 +3,10 @@ import AttendanceRegisteredPage from './AttendanceRegisteredPage.js'
 import CardReaderErrorPage from './CardReaderErrorPage.js'
 import CardReaderPage from './CardReaderPage.js'
 import FaceIDPage from './FaceIDPage.js'
+import FaceScanningErrorPage from './FaceScanningErrorPage.js'
 
 function AttendanceFlow({ config = {} }) {
-  const [page, setPage] = React.useState("card-reader-error")
+  const [page, setPage] = React.useState("face-id-error")
   const [name, setName] = React.useState()
   const [error, setError] = React.useState("fail")
 
@@ -31,11 +32,17 @@ function AttendanceFlow({ config = {} }) {
     handleCancel()
   }
 
+  function handleFaceScanningFailure(error) {
+    setError(error)
+    setPage("face-id-error")
+  }
+
   return html`
     ${{
       "card-reader": html`<${CardReaderPage} onSuccess=${handleSuccesfulCardReading} onFailure=${handleFailedCardReading} />`,
       "card-reader-error": html`<${CardReaderErrorPage} message=${error} onBackToStart=${handleBackToStart} />`,
-      "face-id": html`<${FaceIDPage} onCancel=${handleCancel} onSuccess=${handleFaceIdSuccess} name=${name} />`,
+      "face-id": html`<${FaceIDPage} onCancel=${handleCancel} onSuccess=${handleFaceIdSuccess} name=${name} onFailure=${handleFaceScanningFailure} />`,
+      "face-id-error": html`<${FaceScanningErrorPage} message=${error} onBackToStart=${handleBackToStart} />`,
       "attendance-registered": html`<${AttendanceRegisteredPage} backToStart=${handleBackToStart} />`
     }[page]}
   `

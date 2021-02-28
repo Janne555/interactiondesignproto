@@ -1,3 +1,4 @@
+import { useVariantContext } from '../context/variantContext.js'
 import { html } from '../services/index.js'
 import CameraView from './CameraView.js'
 import { Button, CircularProgress } from './MaterialUI.js'
@@ -7,9 +8,15 @@ import { Button, CircularProgress } from './MaterialUI.js'
  * @param {{name: string, onCancel: () => void, onSuccess: () => void, onFailure: (error: any) => void }} param0 
  */
 function FaceIDPage({ name, onCancel, onSuccess, onFailure }) {
+  const { config } = useVariantContext()
+
   React.useEffect(() => {
     let timeout = setTimeout(() => {
-      onSuccess()
+      if (config.faceScanningError) {
+        onFailure(config.faceScanningError)
+      } else {
+        onSuccess()
+      }
     }, 3000)
 
     return () => { clearTimeout(timeout) }
