@@ -42,7 +42,8 @@ function useVariantContext() {
  * @type Config
  */
 const happyPath = {
-  name: "Kalle"
+  name: "Kalle",
+  isConnectedToSession: true
 }
 
 /**
