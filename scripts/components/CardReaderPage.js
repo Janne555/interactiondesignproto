@@ -35,7 +35,7 @@ function CardReaderPage({ onSuccess, onFailure }) {
     let timeout
     if (phase === "done") {
       timeout = setTimeout(() => {
-        onSuccess("Kalle")
+        onSuccess(config.name)
       }, 1000)
     }
 
@@ -44,7 +44,7 @@ function CardReaderPage({ onSuccess, onFailure }) {
 
   return html`
     <div className="page card-reader">
-      <header>
+      <header className="sub-header">
         <h1>Scan your ID card to proceed</h1>
       </header>
       <div className="content">

@@ -15,8 +15,10 @@ function VariantProvider({ children, isTabletMode, config }) {
  * cardReadingErrorMessage: string
  * faceScanningError: string[]
  * unknownError: string
- * followUpMessage: string,
+ * followUpMessage: string
  * showLoginButton: boolean
+ * name: string
+ * isInstructor: boolean
  * }} Config
  */
 
@@ -38,7 +40,9 @@ function useVariantContext() {
 /**
  * @type Config
  */
-const happyPath = {}
+const happyPath = {
+  name: "Kalle"
+}
 
 /**
  * @type Config
@@ -46,21 +50,24 @@ const happyPath = {}
 const failCardReading = {
   cardReadingErrorMessage: "We couldn't scan your id card",
   followUpMessage: "Please try again",
-  showLoginButton: true
+  showLoginButton: true,
+  name: "Kalle"
 }
 
 /**
  * @type Config
  */
 const failFacialRecognition = {
-  faceScanningError: ["You look different today...", "The ID You scanned does not match Your photo in our database"]
+  faceScanningError: ["You look different today...", "The ID You scanned does not match Your photo in our database"],
+  name: "Kalle"
 }
 
 /**
  * @type Config
  */
 const failForUnknown = {
-  unknownError: "There was some system error"
+  unknownError: "There was some system error",
+  name: "Kalle"
 }
 
 /**
@@ -68,7 +75,16 @@ const failForUnknown = {
 */
 const notRegistered = {
   cardReadingErrorMessage: "Seems like You are not registered for this training",
-  followUpMessage: "Please ask the course manager to add you to the list"
+  followUpMessage: "Please ask the course manager to add you to the list",
+  name: "Kalle"
+}
+
+/**
+* @type Config
+*/
+const instructorLogsIn = {
+  name: "Maija",
+  isInstructor: true
 }
 
 const configs = {
@@ -76,7 +92,8 @@ const configs = {
   failCardReading,
   failFacialRecognition,
   failForUnknown,
-  notRegistered
+  notRegistered,
+  instructorLogsIn
 }
 
 export {

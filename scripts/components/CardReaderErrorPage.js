@@ -12,7 +12,7 @@ function CardReaderErrorPage({ message, followUpMessage, onBackToStart }) {
 
   return html`
     <div className="page card-reader-error">
-      <header>
+      <header className="sub-header">
         <h1>Oops!</h1>
       </header>
       <div className="content">

@@ -1,3 +1,4 @@
+import { useVariantContext } from '../context/variantContext.js'
 import { html } from '../services/index.js'
 import { SmileIcon } from './Icons.js'
 import { Button } from './MaterialUI.js'
@@ -7,6 +8,7 @@ import { Button } from './MaterialUI.js'
  */
 function AttendanceRegisteredPage({ backToStart }) {
   const [seconds, setSeconds] = React.useState(5)
+  const { config } = useVariantContext()
 
   React.useEffect(() => {
     let timeout
@@ -20,7 +22,7 @@ function AttendanceRegisteredPage({ backToStart }) {
 
   return html`
     <div className="page attendance-registered">
-      <header>
+      <header className="sub-header">
         <h1>Your attendance has been registered</h1>
       </header>
       <div className="content">

@@ -2,6 +2,7 @@
   --grey: #eee;
   --black: #333;
   --blue: #0053a5;
+  --dark-blue: #083667;
   --white: #ffffff;
   --background-color: var(--grey);
   --color-text: var(--black);
@@ -35,6 +36,25 @@ body {
   background-color: var(--background-color);
   width: 100vw;
   height: 100vh;
+  display: grid;
+  grid-template-rows: 50px auto;
+  grid-template-areas: 
+    "header"
+    "content"
+}
+
+.main-header {
+  background-color: var(--dark-blue);
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-header h1 {
+  margin: 0;
+  color: var(--white);
 }
 
 .tablet {
@@ -44,6 +64,11 @@ body {
   border: 10px solid black;
   color: var(--color-text);
   margin: var(--padding);
+}
+
+.article {
+  height: 100%;
+  width: 100%;
 }
 
 .camera-view {
@@ -66,7 +91,7 @@ video {
   width: 100%;
 }
 
-header {
+.sub-header {
   grid-area: header;
   justify-self: center;
   align-self: center;

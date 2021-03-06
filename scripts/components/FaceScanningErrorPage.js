@@ -10,7 +10,7 @@ function FaceScanningErrorPage({ message, onBackToStart }) {
 
   return html`
     <div className="page face-id-error">
-      <header>
+      <header className="sub-header">
         <h1>Oops!</h1>
       </header>
       <div className="content">

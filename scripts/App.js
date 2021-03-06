@@ -4,6 +4,7 @@ import { Button, Switch } from './components/MaterialUI.js'
 import { useVideo } from './context/videoContext.js'
 import { configs, VariantProvider } from './context/variantContext.js'
 import AttendanceFlow from './components/AttendanceFlow.js'
+import ManagementFlow from './components/ManagementFlow.js'
 
 function App() {
   const { requestWebCam, message, stream } = useVideo()
@@ -39,6 +40,11 @@ function App() {
         <${Route} path="/variant-5">
           <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.notRegistered} >
             <${AttendanceFlow} />
+          <//>
+        <//>
+        <${Route} path="/variant-6">
+          <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.instructorLogsIn} >
+            <${ManagementFlow} />
           <//>
         <//>
         <${Route} path="/">
@@ -87,6 +93,10 @@ function App() {
               </li>
               <li>
                 <${Link} to="/variant-5">Not registered for training<//>
+              </li>
+              <li>
+                <${Link} to="/variant-6">Instructor logs in<//>
+                <p>The instructor accesses the tablet</p>
               </li>
             </ul>
           </div>

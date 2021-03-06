@@ -15,7 +15,7 @@ function UnknownErrorPage({ message, onBackToStart }) {
 
   return html`
     <div className="page unknown-error">
-      <header>
+      <header className="sub-header">
         <h1>Oops!</h1>
       </header>
       <div className="content">

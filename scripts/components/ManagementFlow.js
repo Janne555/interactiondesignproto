@@ -7,7 +7,7 @@ import FaceIDPage from './FaceIDPage.js'
 import FaceScanningErrorPage from './FaceScanningErrorPage.js'
 import UnknownErrorPage from './UnknownErrorPage.js'
 
-function AttendanceFlow() {
+function ManagementFlow() {
    // card-reader, card-reader-error, face-id, face-id-error, unknown-error, attendance-registered
   const [page, setPage] = React.useState("card-reader")
   const [name, setName] = React.useState()
@@ -40,7 +40,7 @@ function AttendanceFlow() {
   }
 
   function handleBackToStart() {
-    handleCancel()
+    // handleCancel()
   }
 
   function handleFaceScanningFailure(error) {
@@ -50,21 +50,16 @@ function AttendanceFlow() {
 
   return html`
     <div className=${isTabletMode ? "main tablet" : "main"}>
-      <header className="main-header">
-        <h1>PerkinElmer Attendance  System</h1>
-      </header>
-      <article>
-        ${{
-          "card-reader": html`<${CardReaderPage} onSuccess=${handleSuccesfulCardReading} onFailure=${handleFailedCardReading} />`,
-          "card-reader-error": html`<${CardReaderErrorPage} message=${error} onBackToStart=${handleBackToStart} followUpMessage=${config.followUpMessage} />`,
-          "face-id": html`<${FaceIDPage} onCancel=${handleCancel} onSuccess=${handleFaceIdSuccess} name=${name} onFailure=${handleFaceScanningFailure} />`,
-          "face-id-error": html`<${FaceScanningErrorPage} message=${error} onBackToStart=${handleBackToStart} />`,
-          "unknown-error": html`<${UnknownErrorPage} onBackToStart=${handleBackToStart} message=${error} />`,
-          "attendance-registered": html`<${AttendanceRegisteredPage} backToStart=${handleBackToStart} />`
-        }[page]}
-      </article>
+      ${{
+        "card-reader": html`<${CardReaderPage} onSuccess=${handleSuccesfulCardReading} onFailure=${handleFailedCardReading} />`,
+        "card-reader-error": html`<${CardReaderErrorPage} message=${error} onBackToStart=${handleBackToStart} followUpMessage=${config.followUpMessage} />`,
+        "face-id": html`<${FaceIDPage} onCancel=${handleCancel} onSuccess=${handleFaceIdSuccess} name=${name} onFailure=${handleFaceScanningFailure} />`,
+        "face-id-error": html`<${FaceScanningErrorPage} message=${error} onBackToStart=${handleBackToStart} />`,
+        "unknown-error": html`<${UnknownErrorPage} onBackToStart=${handleBackToStart} message=${error} />`,
+        "attendance-registered": html`<${AttendanceRegisteredPage} backToStart=${handleBackToStart} />`
+      }[page]}
     </div>
   `
 }
 
-export default AttendanceFlow
+export default ManagementFlow

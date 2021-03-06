@@ -24,7 +24,7 @@ function FaceIDPage({ name, onCancel, onSuccess, onFailure }) {
 
   return html`
     <div className="face-id page">
-      <header>
+      <header className="sub-header">
         <h1>Hello ${name}!</h1>
       </header>
       <div className="content">
