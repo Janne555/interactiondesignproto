@@ -7,7 +7,8 @@ function Variant5() {
 
   React.useEffect(() => {
     setConfig({
-      cardReadingErrorMessage: "Seems like You are not registered for this training"
+      cardReadingErrorMessage: "Seems like You are not registered for this training",
+      followUpMessage: "Please ask the course manager to add you to the list"
     })
   }, [])
 

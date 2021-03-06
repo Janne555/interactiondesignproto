@@ -201,3 +201,7 @@ li p {
 .unknown-error .content>* {
   margin: 1rem;
 }
+
+.center-text {
+  text-align: center;
+}

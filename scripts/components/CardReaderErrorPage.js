@@ -18,9 +18,11 @@ function CardReaderErrorPage({ message, followUpMessage, onBackToStart }) {
         <div className="icon">
           <${FrownIcon} />
         </div>
-        <p>${followUpMessage}</p>
+        <p className="center-text">${followUpMessage}</p>
+        </div>
+      <footer className="buttons"> 
         <${Button} color="primary" variant="contained" onClick=${onBackToStart}>Back to start<//>
-      </div>
+      </footer>
     </div>
   `
 }
