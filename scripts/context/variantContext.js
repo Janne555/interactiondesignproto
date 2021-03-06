@@ -18,7 +18,8 @@ function VariantProvider({ children }) {
  * cardReadingErrorMessage: string
  * faceScanningError: string[]
  * unknownError: string
- * followUpMessage: string
+ * followUpMessage: string,
+ * showLoginButton: boolean
  * }} Config
  */
 

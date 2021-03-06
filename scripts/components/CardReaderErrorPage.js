@@ -1,3 +1,4 @@
+import { useVariantContext } from '../context/variantContext.js'
 import { html } from '../services/index.js'
 import { FrownIcon } from './Icons.js'
 import { Button } from './MaterialUI.js'
@@ -7,6 +8,7 @@ import { Button } from './MaterialUI.js'
  * @param {{message: string, onBackToStart: () => void }} param0 
  */
 function CardReaderErrorPage({ message, followUpMessage, onBackToStart }) {
+  const { config } = useVariantContext()
 
   return html`
     <div className="page card-reader-error">
@@ -22,6 +24,9 @@ function CardReaderErrorPage({ message, followUpMessage, onBackToStart }) {
         </div>
       <footer className="buttons"> 
         <${Button} color="primary" variant="contained" onClick=${onBackToStart}>Back to start<//>
+        ${config.showLoginButton &&
+          html`<${Button}  color="primary" variant="contained" onClick=${() => alert("not implemented")}>Login to Register<//>`
+        }
       </footer>
     </div>
   `

@@ -8,7 +8,8 @@ function Variant2() {
   React.useEffect(() => {
     setConfig({
       cardReadingErrorMessage: "We couldn't scan your id card",
-      followUpMessage: "Please try again"
+      followUpMessage: "Please try again",
+      showLoginButton: true
     })
   }, [])
 
