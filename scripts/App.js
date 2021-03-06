@@ -3,7 +3,7 @@ import { Link, Route, Switch as RouterSwitch } from './components/Router.js'
 import { Button, Switch } from './components/MaterialUI.js'
 import { useVideo } from './context/videoContext.js'
 import { configs, VariantProvider } from './context/variantContext.js'
-import AttendanceFlow from './components/RegistrationFlow.js'
+import RegistrationFlow from './components/RegistrationFlow.js'
 
 function App() {
   const { requestWebCam, message, stream } = useVideo()
@@ -18,32 +18,32 @@ function App() {
       <${RouterSwitch}>
         <${Route} path="/variant-1">
           <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.happyPath} >
-            <${AttendanceFlow} />
+            <${RegistrationFlow} />
           <//>
         <//>
         <${Route} path="/variant-2">
           <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.failCardReading} >
-            <${AttendanceFlow} />
+            <${RegistrationFlow} />
           <//>
         <//>
         <${Route} path="/variant-3">
           <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.failFacialRecognition} >
-            <${AttendanceFlow} />
+            <${RegistrationFlow} />
           <//>
         <//>
         <${Route} path="/variant-4">
           <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.failForUnknown} >
-            <${AttendanceFlow} />
+            <${RegistrationFlow} />
           <//>
         <//>
         <${Route} path="/variant-5">
           <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.notRegistered} >
-            <${AttendanceFlow} />
+            <${RegistrationFlow} />
           <//>
         <//>
         <${Route} path="/variant-6">
           <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.instructorLogsIn} >
-            <${AttendanceFlow} />
+            <${RegistrationFlow} />
           <//>
         <//>
         <${Route} path="/">

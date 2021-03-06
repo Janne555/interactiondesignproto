@@ -7,7 +7,7 @@ import FaceIDPage from './FaceIDPage.js'
 import FaceScanningErrorPage from './FaceScanningErrorPage.js'
 import UnknownErrorPage from './UnknownErrorPage.js'
 
-function AttendanceFlow() {
+function RegistrationFlow() {
    // card-reader, card-reader-error, face-id, face-id-error, unknown-error, attendance-registered
   const [page, setPage] = React.useState("card-reader")
   const [name, setName] = React.useState()
@@ -67,4 +67,4 @@ function AttendanceFlow() {
   `
 }
 
-export default AttendanceFlow
+export default RegistrationFlow
