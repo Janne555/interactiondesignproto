@@ -12,7 +12,7 @@ import ManagementPage from './ManagementPage.js'
 function RegistrationFlow() {
   // card-reader, card-reader-error, face-id, face-id-error, unknown-error, attendance-registered, start-session, management
   const { config, isTabletMode } = useVariantContext()
-  const firstPage = /* config.isConnectedToSession ? "card-reader" : "start-session" */ "management"
+  const firstPage = config.isConnectedToSession ? "card-reader" : "start-session"
   const [page, setPage] = React.useState(firstPage)
   const [name, setName] = React.useState()
   const [error, setError] = React.useState("")
