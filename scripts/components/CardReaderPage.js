@@ -1,6 +1,6 @@
 import { useVariantContext } from '../context/variantContext.js'
 import { html } from '../services/index.js'
-import { NFCIcon } from './Icons.js'
+import { CheckCircle, NFCIcon } from './Icons.js'
 import { CircularProgress } from './MaterialUI.js'
 
 
@@ -9,41 +9,55 @@ import { CircularProgress } from './MaterialUI.js'
  * @param {{onSuccess: (name: string) => void, onFailure: (error?: any) => void}} param0 
  */
 function CardReaderPage({ onSuccess, onFailure }) {
-  const [isReadingCard, setIsReadingCard] = React.useState(false)
+  const [phase, setPhase] = React.useState("idle") // idle, reading, done
   const { config } = useVariantContext()
 
-  function handleCardRead(event) {
-    setIsReadingCard(true)
+  function handleCardRead() {
+    setPhase("reading")
   }
 
   React.useEffect(() => {
     let timeout
-    if (isReadingCard) {
+    if (phase === "reading") {
       timeout = setTimeout(() => {
         if (config.cardReadingErrorMessage) {
           onFailure(config.cardReadingErrorMessage)
         } else {
-          onSuccess("Kalle")
+          setPhase("done")
         }
       }, 1000)
     }
 
     return () => { timeout && clearTimeout(timeout) }
-  }, [isReadingCard])
+  }, [phase])
+
+  React.useEffect(() => {
+    let timeout
+    if (phase === "done") {
+      timeout = setTimeout(() => {
+        onSuccess("Kalle")
+      }, 1000)
+    }
+
+    return () => { timeout && clearTimeout(timeout) }
+  }, [phase])
 
   return html`
     <div className="page card-reader">
       <header>
         <h1>Scan your ID card to proceed</h1>
       </header>
-      ${isReadingCard
-      ? html`<div className="progress-spinner"><${CircularProgress} /></div>`
-      : html`
-          <div className="icon" onClick=${handleCardRead}>
+      <div className="content">
+      ${{
+        idle: html`
+          <div className="card-reader-icon" onClick=${handleCardRead}>
             <${NFCIcon} />
           </div>
-        `
-    }
+        `,
+        reading:  html`<div className="progress-spinner"><${CircularProgress} /></div>`,
+        done: html`<div className="icon"><${CheckCircle} /></div>`
+      }[phase]}
+      </div>
     </div>
   `
 }
