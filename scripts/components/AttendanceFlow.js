@@ -9,7 +9,7 @@ import UnknownErrorPage from './UnknownErrorPage.js'
 
 function AttendanceFlow() {
    // card-reader, card-reader-error, face-id, face-id-error, unknown-error, attendance-registered
-  const [page, setPage] = React.useState("card-reader")
+  const [page, setPage] = React.useState("attendance-registered")
   const [name, setName] = React.useState()
   const [error, setError] = React.useState("")
   const { config, isTabletMode } = useVariantContext()
@@ -40,7 +40,7 @@ function AttendanceFlow() {
   }
 
   function handleBackToStart() {
-    handleCancel()
+    // handleCancel()
   }
 
   function handleFaceScanningFailure(error) {

@@ -144,8 +144,29 @@ footer {
   align-items: center;
 }
 
-.attendance-registered .content>* {
-  margin: 1rem;
+.countdown-line {
+  background-color: #bad1e8;
+  width: 60%;
+  height: 10px;
+  display: flex;
+}
+
+.countdown-line::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  background-color: var(--blue);
+  animation: disappear 5s linear forwards;
+}
+
+@keyframes disappear {
+  0% {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
 }
 
 .not-ready {

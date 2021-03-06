@@ -26,6 +26,7 @@ function AttendanceRegisteredPage({ backToStart }) {
       <div className="content">
         <div className="center icon"><${SmileIcon} /></div>
         <h2>This view will automatically reset in ${seconds}s</h2>
+        <div className="countdown-line" />
       </div>
       <footer className="buttons">
         <${Button} color="primary" variant="contained" onClick=${backToStart}>Back to start<//>
