@@ -38,9 +38,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 50px auto;
-  grid-template-areas: 
-    "header"
-    "content"
+  grid-template-areas: "header" "content"
 }
 
 .main-header {
@@ -254,4 +252,8 @@ li p {
 
 .center-text {
   text-align: center;
+}
+
+.start-session .content {
+  justify-content: center;
 }

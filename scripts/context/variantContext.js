@@ -19,6 +19,7 @@ function VariantProvider({ children, isTabletMode, config }) {
  * showLoginButton: boolean
  * name: string
  * isInstructor: boolean
+ * isConnectedToSession: boolean
  * }} Config
  */
 
@@ -51,7 +52,8 @@ const failCardReading = {
   cardReadingErrorMessage: "We couldn't scan your id card",
   followUpMessage: "Please try again",
   showLoginButton: true,
-  name: "Kalle"
+  name: "Kalle",
+  isConnectedToSession: true
 }
 
 /**
@@ -59,7 +61,8 @@ const failCardReading = {
  */
 const failFacialRecognition = {
   faceScanningError: ["You look different today...", "The ID You scanned does not match Your photo in our database"],
-  name: "Kalle"
+  name: "Kalle",
+  isConnectedToSession: true
 }
 
 /**
@@ -67,7 +70,8 @@ const failFacialRecognition = {
  */
 const failForUnknown = {
   unknownError: "There was some system error",
-  name: "Kalle"
+  name: "Kalle",
+  isConnectedToSession: true
 }
 
 /**
@@ -76,7 +80,8 @@ const failForUnknown = {
 const notRegistered = {
   cardReadingErrorMessage: "Seems like You are not registered for this training",
   followUpMessage: "Please ask the course manager to add you to the list",
-  name: "Kalle"
+  name: "Kalle",
+  isConnectedToSession: true
 }
 
 /**
@@ -84,7 +89,8 @@ const notRegistered = {
 */
 const instructorLogsIn = {
   name: "Maija",
-  isInstructor: true
+  isInstructor: true,
+  isConnectedToSession: false
 }
 
 const configs = {

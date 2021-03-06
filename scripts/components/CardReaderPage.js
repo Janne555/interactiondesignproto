@@ -1,14 +1,14 @@
 import { useVariantContext } from '../context/variantContext.js'
 import { html } from '../services/index.js'
 import { CheckCircle, NFCIcon } from './Icons.js'
-import { CircularProgress } from './MaterialUI.js'
+import { Button, CircularProgress } from './MaterialUI.js'
 
 
 /**
  * 
- * @param {{onSuccess: (name: string) => void, onFailure: (error?: any) => void}} param0 
+ * @param {{onSuccess: (name: string) => void, onFailure: (error?: any) => void, onBackToStart: () => void}} param0 
  */
-function CardReaderPage({ onSuccess, onFailure }) {
+function CardReaderPage({ onSuccess, onFailure, onBackToStart }) {
   const [phase, setPhase] = React.useState("idle") // idle, reading, done
   const { config } = useVariantContext()
 
@@ -49,15 +49,19 @@ function CardReaderPage({ onSuccess, onFailure }) {
       </header>
       <div className="content">
       ${{
-        idle: html`
+      idle: html`
           <div className="center icon card-reader-icon" onClick=${handleCardRead}>
             <${NFCIcon} />
           </div>
         `,
-        reading:  html`<div className="center progress-spinner"><${CircularProgress} /></div>`,
-        done: html`<div className="center icon"><${CheckCircle} /></div>`
-      }[phase]}
+      reading: html`<div className="center progress-spinner"><${CircularProgress} /></div>`,
+      done: html`<div className="center icon"><${CheckCircle} /></div>`
+    }[phase]}
       </div>
+      <footer className="buttons">
+        ${!config.isConnectedToSession && html`<${Button} color="primary" variant="contained" onClick=${onBackToStart}>Back to Start<//>`}
+        <${Button} color="primary" variant="contained" onClick=${() => { alert("not implemented") }}>Use Credentials to Log in<//>
+      </footer>
     </div>
   `
 }
