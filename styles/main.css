@@ -1,42 +1,49 @@
 :root {
-  --grey: #808080;
-  --black: #141414;
-  --blue: #0000ff;
+  --grey: #eee;
+  --black: #333;
+  --blue: #0053a5;
   --white: #ffffff;
-
   --background-color: var(--grey);
   --color-text: var(--black);
   --color-text-inverted: var(--white);
   --color-buttons: var(--blue);
   --color-icons: var(--blue);
-
   --padding: 1rem;
 }
 
-html {}
+h1, h2, h3, h4, h5 {
+  font-family: 'Lato', 'Roboto';
+}
+
+p {
+  font-family: 'Open Sans', 'Roboto';
+}
+
+.meta {
+  padding: var(--padding);
+}
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Lato', 'Roboto', sans-serif;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
 }
 
-main {}
-
-.aspect-ratio-wrapper {
-
+.main {
+  background-color: var(--background-color);
+  width: 100vw;
+  height: 100vh;
 }
 
 .tablet {
   /* for a 4:3 aspect ratio */
   width: calc(80vh * 0.75);
   height: 80vh;
-  background-color: var(--background-color);
   border: 10px solid black;
   color: var(--color-text);
+  margin: var(--padding);
 }
 
 .camera-view {
@@ -54,10 +61,7 @@ video {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: 100px auto 100px;
-  grid-template-areas: 
-    "header header header"
-    "content content content"
-    "footer footer footer";
+  grid-template-areas: "header header header" "content content content" "footer footer footer";
   height: 100%;
   width: 100%;
 }
@@ -140,7 +144,7 @@ footer {
   align-items: center;
 }
 
-.attendance-registered .content > * {
+.attendance-registered .content>* {
   margin: 1rem;
 }
 

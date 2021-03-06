@@ -49,7 +49,7 @@ function AttendanceFlow() {
   }
 
   return html`
-    <div className=${isTabletMode ? "tablet" : ""}>
+    <div className=${isTabletMode ? "main tablet" : "main"}>
       ${{
         "card-reader": html`<${CardReaderPage} onSuccess=${handleSuccesfulCardReading} onFailure=${handleFailedCardReading} />`,
         "card-reader-error": html`<${CardReaderErrorPage} message=${error} onBackToStart=${handleBackToStart} followUpMessage=${config.followUpMessage} />`,

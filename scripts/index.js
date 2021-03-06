@@ -7,9 +7,13 @@ import { ThemeProvider } from './components/MaterialUI.js'
 const theme = MaterialUI.createMuiTheme({
   palette: {
     primary: {
-      main: '#0000ff'
+      main: '#0053a5'
     }
-  }
+  },
+  typography: [
+    'Lato',
+    'Roboto'
+  ]
 })
 
 ReactDOM.render(html`
