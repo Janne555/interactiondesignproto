@@ -1,14 +1,16 @@
 :root {
-  --grey: grey;
-  --black: rgb(20, 20, 20);
-  --blue: blue;
-  --white: white;
+  --grey: #808080;
+  --black: #141414;
+  --blue: #0000ff;
+  --white: #ffffff;
 
   --background-color: var(--grey);
   --color-text: var(--black);
   --color-text-inverted: var(--white);
   --color-buttons: var(--blue);
   --color-icons: var(--blue);
+
+  --padding: 1rem;
 }
 
 html {}
@@ -66,6 +68,22 @@ header {
   align-self: center;
 }
 
+footer {
+  box-sizing: border-box;
+  grid-area: footer;
+  justify-self: center;
+  align-self: center;
+}
+
+.buttons {
+  padding: var(--padding);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .card-reader-icon.card-reader-icon>svg {
   height: 140px;
   width: 140px;
@@ -78,7 +96,7 @@ header {
   align-content: center;
 }
 
-.icon, .MuiCircularProgress-colorPrimary.MuiCircularProgress-colorPrimary {
+.icon {
   fill: var(--color-icons);
   color: var(--color-icons);
 }
@@ -89,6 +107,8 @@ header {
 }
 
 .content {
+  height: 100%;
+  width: 100%;
   grid-area: content;
   justify-self: center;
   display: flex;
@@ -180,9 +200,4 @@ li p {
 
 .unknown-error .content>* {
   margin: 1rem;
-}
-
-.MuiButton-root.MuiButton-root {
-  color: var(--color-text-inverted);
-  background-color: var(--color-buttons);
 }

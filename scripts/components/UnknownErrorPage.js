@@ -1,5 +1,5 @@
-import { html } from '../services/index.js'
 import { MehIcon } from './Icons.js'
+import { html } from '../services/index.js'
 import { Button } from './MaterialUI.js'
 
 /**
@@ -7,6 +7,11 @@ import { Button } from './MaterialUI.js'
  * @param {{message: string, onBackToStart: () => void }} param0 
  */
 function UnknownErrorPage({ message, onBackToStart }) {
+
+  function handleSubmit() {
+    alert("this has not been implemented")
+    onBackToStart()
+  }
 
   return html`
     <div className="page unknown-error">
@@ -19,8 +24,11 @@ function UnknownErrorPage({ message, onBackToStart }) {
           <${MehIcon} />
         </div>
         <p>Please try again</p>
-        <${Button} variant="outlined" onClick=${onBackToStart}>Back to start<//>
-      </div>
+        </div>
+      <footer className="buttons">
+        <${Button} color="primary" variant="contained" onClick=${onBackToStart}>Back to start<//>
+        <${Button} color="primary" variant="contained" onClick=${handleSubmit}>Submit Report<//>
+      </footer>
     </div>
   `
 }

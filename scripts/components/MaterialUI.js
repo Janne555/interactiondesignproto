@@ -4,5 +4,6 @@ export const {
   ListItem,
   ListItemText,
   CircularProgress,
-  Typography
+  Typography,
+  ThemeProvider
 } = MaterialUI

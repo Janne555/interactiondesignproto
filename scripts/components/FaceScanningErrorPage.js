@@ -1,10 +1,10 @@
 import { html } from '../services/index.js'
-import { EyeOffIcon, FrownIcon } from './Icons.js'
+import { EyeOffIcon } from './Icons.js'
 import { Button } from './MaterialUI.js'
 
 /**
  * 
- * @param {{message: string, onBackToStart: () => void }} param0 
+ * @param {{message: string[], onBackToStart: () => void }} param0 
  */
 function FaceScanningErrorPage({ message, onBackToStart }) {
 
@@ -20,7 +20,7 @@ function FaceScanningErrorPage({ message, onBackToStart }) {
           <${EyeOffIcon} />
         </div>
         <p>Please contact the administrator</p>
-        <${Button} variant="outlined" onClick=${onBackToStart}>Back to start<//>
+        <${Button} color="primary" variant="contained" onClick=${onBackToStart}>Back to start<//>
       </div>
     </div>
   `
