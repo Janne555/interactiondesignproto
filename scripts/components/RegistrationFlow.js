@@ -1,6 +1,6 @@
 import { useVariantContext } from '../context/variantContext.js'
 import { html } from '../services/index.js'
-import AttendanceRegisteredPage from './AttendanceRegisteredPage.js'
+import RegistrationSuccessfulPage from './RegistrationSuccessfulPage.js'
 import CardReaderErrorPage from './CardReaderErrorPage.js'
 import CardReaderPage from './CardReaderPage.js'
 import FaceIDPage from './FaceIDPage.js'
@@ -60,7 +60,7 @@ function AttendanceFlow() {
           "face-id": html`<${FaceIDPage} onCancel=${handleCancel} onSuccess=${handleFaceIdSuccess} name=${name} onFailure=${handleFaceScanningFailure} />`,
           "face-id-error": html`<${FaceScanningErrorPage} message=${error} onBackToStart=${handleBackToStart} />`,
           "unknown-error": html`<${UnknownErrorPage} onBackToStart=${handleBackToStart} message=${error} />`,
-          "attendance-registered": html`<${AttendanceRegisteredPage} backToStart=${handleBackToStart} />`
+          "attendance-registered": html`<${RegistrationSuccessfulPage} backToStart=${handleBackToStart} />`
         }[page]}
       </article>
     </div>

@@ -3,8 +3,7 @@ import { Link, Route, Switch as RouterSwitch } from './components/Router.js'
 import { Button, Switch } from './components/MaterialUI.js'
 import { useVideo } from './context/videoContext.js'
 import { configs, VariantProvider } from './context/variantContext.js'
-import AttendanceFlow from './components/AttendanceFlow.js'
-import ManagementFlow from './components/ManagementFlow.js'
+import AttendanceFlow from './components/RegistrationFlow.js'
 
 function App() {
   const { requestWebCam, message, stream } = useVideo()
@@ -44,7 +43,7 @@ function App() {
         <//>
         <${Route} path="/variant-6">
           <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.instructorLogsIn} >
-            <${ManagementFlow} />
+            <${AttendanceFlow} />
           <//>
         <//>
         <${Route} path="/">

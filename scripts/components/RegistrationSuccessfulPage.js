@@ -6,7 +6,7 @@ import { Button } from './MaterialUI.js'
  * 
  * @param {{backToStart: () => void}} param0 
  */
-function AttendanceRegisteredPage({ backToStart }) {
+function RegistrationSuccessfulPage({ backToStart }) {
   const [seconds, setSeconds] = React.useState(5)
   const { config } = useVariantContext()
 
@@ -37,4 +37,4 @@ function AttendanceRegisteredPage({ backToStart }) {
   `
 }
 
-export default AttendanceRegisteredPage
+export default RegistrationSuccessfulPage
