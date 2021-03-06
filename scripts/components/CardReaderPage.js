@@ -60,7 +60,9 @@ function CardReaderPage({ onSuccess, onFailure, onBackToStart }) {
       </div>
       <footer className="buttons">
         ${!config.isConnectedToSession && html`<${Button} color="primary" variant="contained" onClick=${onBackToStart}>Back to Start<//>`}
-        <${Button} color="primary" variant="contained" onClick=${() => { alert("not implemented") }}>Use Credentials to Log in<//>
+        <div className="to-right">
+          <${Button} color="primary" variant="contained" onClick=${() => { alert("not implemented") }}>Use Credentials to Log in<//>
+        </div>        
       </footer>
     </div>
   `

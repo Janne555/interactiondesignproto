@@ -257,3 +257,7 @@ li p {
 .start-session .content {
   justify-content: center;
 }
+
+.to-right {
+  margin-left: auto;
+}
