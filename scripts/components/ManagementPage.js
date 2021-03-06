@@ -15,9 +15,10 @@ function ManagementPage({ onStartSession }) {
           <h2>Management</h2>
         </header>
         <div className="content">
+          <p>this demo has not been implemented yet</p>
         </div>
         <footer className="buttons">
-          
+
         </footer>
       </div>
     </div>
