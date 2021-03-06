@@ -1,17 +1,13 @@
 import { html } from './services/index.js'
 import { Link, Route, Switch as RouterSwitch } from './components/Router.js'
 import { Button, Switch } from './components/MaterialUI.js'
-import Variant1 from './components/Variant1.js'
-import Variant4 from './components/Variant4.js'
-import Variant3 from './components/Variant3.js'
-import Variant2 from './components/Variant2.js'
 import { useVideo } from './context/videoContext.js'
-import Variant5 from './components/Variant5.js'
-import { useVariantContext } from './context/variantContext.js'
+import { configs, VariantProvider } from './context/variantContext.js'
+import AttendanceFlow from './components/AttendanceFlow.js'
 
 function App() {
   const { requestWebCam, message, stream } = useVideo()
-  const { setIsTabletMode, isTabletMode } = useVariantContext()
+  const [isTabletMode, setIsTabletMode] = React.useState(true)
 
   function handleTabletModeChange(event) {
     setIsTabletMode(event.target.checked)
@@ -21,19 +17,29 @@ function App() {
     <div>
       <${RouterSwitch}>
         <${Route} path="/variant-1">
-          <${Variant1} />
+          <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.happyPath} >
+            <${AttendanceFlow} />
+          <//>
         <//>
         <${Route} path="/variant-2">
-          <${Variant2} />
+          <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.failCardReading} >
+            <${AttendanceFlow} />
+          <//>
         <//>
         <${Route} path="/variant-3">
-          <${Variant3} />
+          <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.failFacialRecognition} >
+            <${AttendanceFlow} />
+          <//>
         <//>
         <${Route} path="/variant-4">
-          <${Variant4} />
+          <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.failForUnknown} >
+            <${AttendanceFlow} />
+          <//>
         <//>
         <${Route} path="/variant-5">
-          <${Variant5} />
+          <${VariantProvider} isTabletMode=${isTabletMode} config=${configs.notRegistered} >
+            <${AttendanceFlow} />
+          <//>
         <//>
         <${Route} path="/">
           <h1>Attendance Management System Interactive Prototype</h1>
