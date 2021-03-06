@@ -59,13 +59,12 @@ header {
   width: 100px;
 }
 
-.card-reader .progress-spinner {
-  margin-top: 5rem;
-}
-
 .content {
   grid-area: content;
   justify-self: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
 }
 
 .face-id .content {
