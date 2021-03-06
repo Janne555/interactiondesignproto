@@ -4,20 +4,31 @@ const Context = React.createContext()
 
 function VariantProvider({ children }) {
   const [config = {}, setConfig] = React.useState()
-
+  const [isTabletMode, setIsTabletMode] = React.useState(true)
+  
   return html`
-    <${Context.Provider} value=${{ config, setConfig }}>
+    <${Context.Provider} value=${{ config, setConfig, isTabletMode, setIsTabletMode }}>
       ${children}
     <//>
   `
 }
 
 /**
- * @typedef {{cardReadingErrorMessage: string, faceScanningError: string[], unknownError: string, followUpMessage: string}} Config
+ * @typedef {{
+ * cardReadingErrorMessage: string
+ * faceScanningError: string[]
+ * unknownError: string
+ * followUpMessage: string
+ * }} Config
  */
 
 /**
- * @returns {{config: Config, setConfig: (config: Config) => void}}
+ * @returns {{
+  * config: Config
+  * setConfig: (config: Config) => void
+  * isTabletMode: boolean
+  * setIsTabletMode: (value: boolean) => void
+ * }}
  */
 function useVariantContext() {
   const context = React.useContext(Context)

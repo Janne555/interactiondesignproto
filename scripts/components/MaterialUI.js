@@ -5,5 +5,8 @@ export const {
   ListItemText,
   CircularProgress,
   Typography,
-  ThemeProvider
+  ThemeProvider,
+  Switch,
+  FormGroup,
+  FormControlLabel
 } = MaterialUI

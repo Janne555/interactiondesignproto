@@ -12,7 +12,7 @@ function AttendanceFlow() {
   const [page, setPage] = React.useState("card-reader")
   const [name, setName] = React.useState()
   const [error, setError] = React.useState("")
-  const { config } = useVariantContext()
+  const { config, isTabletMode } = useVariantContext()
 
   React.useEffect(() => {
     if (config.unknownError && page === "face-id") {
@@ -49,7 +49,7 @@ function AttendanceFlow() {
   }
 
   return html`
-    <div className="tablet">
+    <div className=${isTabletMode ? "tablet" : ""}>
       ${{
         "card-reader": html`<${CardReaderPage} onSuccess=${handleSuccesfulCardReading} onFailure=${handleFailedCardReading} />`,
         "card-reader-error": html`<${CardReaderErrorPage} message=${error} onBackToStart=${handleBackToStart} followUpMessage=${config.followUpMessage} />`,
