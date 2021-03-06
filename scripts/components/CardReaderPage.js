@@ -50,12 +50,12 @@ function CardReaderPage({ onSuccess, onFailure }) {
       <div className="content">
       ${{
         idle: html`
-          <div className="card-reader-icon" onClick=${handleCardRead}>
+          <div className="center icon card-reader-icon" onClick=${handleCardRead}>
             <${NFCIcon} />
           </div>
         `,
-        reading:  html`<div className="progress-spinner"><${CircularProgress} /></div>`,
-        done: html`<div className="icon"><${CheckCircle} /></div>`
+        reading:  html`<div className="center progress-spinner"><${CircularProgress} /></div>`,
+        done: html`<div className="center icon"><${CheckCircle} /></div>`
       }[phase]}
       </div>
     </div>

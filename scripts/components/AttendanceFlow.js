@@ -8,6 +8,7 @@ import FaceScanningErrorPage from './FaceScanningErrorPage.js'
 import UnknownErrorPage from './UnknownErrorPage.js'
 
 function AttendanceFlow() {
+   // card-reader, card-reader-error, face-id, face-id-error, unknown-error, attendance-registered
   const [page, setPage] = React.useState("card-reader")
   const [name, setName] = React.useState()
   const [error, setError] = React.useState("")
@@ -39,7 +40,7 @@ function AttendanceFlow() {
   }
 
   function handleBackToStart() {
-    handleCancel()
+    // handleCancel()
   }
 
   function handleFaceScanningFailure(error) {

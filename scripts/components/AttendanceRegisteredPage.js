@@ -24,7 +24,7 @@ function AttendanceRegisteredPage({ backToStart }) {
         <h1>Your attendance has been registered</h1>
       </header>
       <div className="content">
-        <div className="icon"><${SmileIcon} /></div>
+        <div className="center icon"><${SmileIcon} /></div>
         <h2>This view will automatically reset in ${seconds}s</h2>
         <${Button} variant="outlined" onClick=${backToStart}>Back to start<//>
       </div>
