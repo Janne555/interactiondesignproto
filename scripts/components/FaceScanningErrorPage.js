@@ -19,9 +19,12 @@ function FaceScanningErrorPage({ message, onBackToStart }) {
         <div className="icon">
           <${EyeOffIcon} />
         </div>
-        <p>Please contact the administrator</p>
+        <p className="center-text">You can log in using your credentials and update your photo</p>
+        </div>
+      <footer className="buttons">
         <${Button} color="primary" variant="contained" onClick=${onBackToStart}>Back to start<//>
-      </div>
+        <${Button} color="primary" variant="contained" onClick=${onBackToStart}>Login In<//>
+      </footer>
     </div>
   `
 }
