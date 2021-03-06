@@ -40,7 +40,7 @@ function AttendanceFlow() {
   }
 
   function handleBackToStart() {
-    // handleCancel()
+    handleCancel()
   }
 
   function handleFaceScanningFailure(error) {

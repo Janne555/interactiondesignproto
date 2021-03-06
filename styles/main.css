@@ -1,3 +1,16 @@
+:root {
+  --grey: grey;
+  --black: rgb(20, 20, 20);
+  --blue: blue;
+  --white: white;
+
+  --background-color: var(--grey);
+  --color-text: var(--black);
+  --color-text-inverted: var(--white);
+  --color-buttons: var(--blue);
+  --color-icons: var(--blue);
+}
+
 html {}
 
 body {
@@ -16,6 +29,7 @@ main {}
   width: 768px;
   background-color: var(--background-color);
   border: 10px solid black;
+  color: var(--color-text);
 }
 
 .camera-view {
@@ -56,7 +70,10 @@ header {
   align-content: center;
 }
 
-.icon {}
+.icon, .MuiCircularProgress-colorPrimary.MuiCircularProgress-colorPrimary {
+  fill: var(--color-icons);
+  color: var(--color-icons);
+}
 
 .icon svg {
   height: 100px;
@@ -157,6 +174,7 @@ li p {
   margin: 1rem;
 }
 
-:root {
-  --background-color: grey;
+.MuiButton-root.MuiButton-root {
+  color: var(--color-text-inverted);
+  background-color: var(--color-buttons);
 }
