@@ -1,14 +1,24 @@
 html {
-  background-color: var(--background-color);
 }
 
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
 main {
-  padding: 1rem;
+
+}
+
+.tablet {
+  height: 1024px;
+  width: 768px;
+  background-color: var(--background-color);
+  border: 10px solid black;
 }
 
 .camera-view {
@@ -39,24 +49,23 @@ header {
   align-self: center;
 }
 
-.card-reader .icon {
-  grid-area: content;
-  justify-self: center;
-}
-
-.card-reader .icon > svg {
+.card-reader-icon > svg {
   height: 140px;
   width: 140px;
 }
 
+.icon > svg {
+  height: 100px;
+  width: 100px;
+}
+
 .card-reader .progress-spinner {
   margin-top: 5rem;
-  grid-area: content;
-  justify-self: center;
 }
 
 .content {
   grid-area: content;
+  justify-self: center;
 }
 
 .face-id .content {
@@ -143,7 +152,6 @@ li p {
 .unknown-error .content > * {
   margin: 1rem;
 }
-
 
 .icon > svg {
   height: 100px;
