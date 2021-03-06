@@ -24,9 +24,14 @@ body {
 
 main {}
 
+.aspect-ratio-wrapper {
+
+}
+
 .tablet {
-  height: 1024px;
-  width: 768px;
+  /* for a 4:3 aspect ratio */
+  width: calc(80vh * 0.75);
+  height: 80vh;
   background-color: var(--background-color);
   border: 10px solid black;
   color: var(--color-text);
@@ -112,7 +117,7 @@ header {
   align-items: center;
 }
 
-.attendance-registered .content>* {
+.attendance-registered .content > * {
   margin: 1rem;
 }
 
