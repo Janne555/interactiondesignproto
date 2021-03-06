@@ -1,3 +1,7 @@
+html {
+  background-color: var(--background-color);
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -144,4 +148,8 @@ li p {
 .icon > svg {
   height: 100px;
   width: 100px;
+}
+
+:root {
+  --background-color: grey;
 }
